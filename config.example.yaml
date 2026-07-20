@@ -1,0 +1,20 @@
+# Copy to config.yaml and edit.
+persona_name: "example-thinker"
+channel_url: "https://www.youtube.com/@SomePublicChannel"
+workdir: "./vaults/example-thinker"
+
+# LLM provider for wiki compilation: anthropic | deepseek
+provider: "anthropic"
+model: "claude-sonnet-4-6"            # or deepseek-chat
+# API key read from env: ANTHROPIC_API_KEY or DEEPSEEK_API_KEY
+
+# Wiki categories — the shape of the persona's mind. Edit per subject.
+categories:
+  - Principles       # core beliefs, repeated claims
+  - Frameworks       # named models and methods
+  - Heuristics       # decision shortcuts, rules of thumb
+  - Voice            # phrasing patterns, register, signature language
+  - Situations       # how they handle specific scenario types
+
+chunk_chars: 14000
+checkpoint_file: "checkpoint.json"
