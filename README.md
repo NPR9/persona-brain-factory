@@ -51,3 +51,9 @@ Output vault opens directly in Obsidian; graph view shows the `[[wikilink]]` mes
 ## License
 
 MIT (pipeline code). Corpora you process remain governed by their own rights.
+
+## Checkpointing design
+
+The compile stage will crash mid-run on large corpora (300+ videos). Every transcript file processed is written to `checkpoint.json` after successful compile. Rerunning the same command resumes exactly where it stopped — zero lost progress.
+
+Example: if compile crashes after processing 127 videos, just run `03_compile_wiki.py` again. It checks checkpoint.json, skips those 127, and continues from 128.
